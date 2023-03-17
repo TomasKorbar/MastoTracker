@@ -5,9 +5,21 @@ from .api_access_exception import ApiAccessException
 
 
 class ApiAccessIterable:
+    """Class for abstraction of work with mastodon API pagination"""
     next_link_re = re.compile(r'<(.*)>; rel="next"')
 
-    def __init__(self, api_url):
+    def __init__(self, api_url: str):
+        """
+
+        Parameters
+        ----------
+        api_url : str
+            url where API endpoint is located
+
+        Returns
+        -------
+
+        """
         self._api_url = api_url
 
     def __iter__(self):
